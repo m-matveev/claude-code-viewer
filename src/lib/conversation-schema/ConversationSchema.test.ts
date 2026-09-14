@@ -307,6 +307,8 @@ describe("ConversationSchema", () => {
     // type would be swallowed by the unknown-entry fallback.
     const modelledOptions = ConversationSchema.options.length - 1; // last option is the fallback
     expect(modelledOptions).toBe(KNOWN_ENTRY_TYPES.size);
+  });
+
   test("accepts <synthetic> assistant entries whose usage fields are null (rate-limit notices)", () => {
     const result = ConversationSchema.safeParse({
       parentUuid: "7931b276-95f1-474f-aa36-a0e951542d94",
